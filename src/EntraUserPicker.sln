@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Community.EntraUserPicker.Site", "Our.Umbraco.Community.EntraUserPicker.Site\Our.Umbraco.Community.EntraUserPicker.Site.csproj", "{3EA0FFA5-ABAF-460C-9C80-D2F5D9A3E7C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Community.EntraUserPicker", "Our.Umbraco.Community.EntraUserPicker\Our.Umbraco.Community.EntraUserPicker.csproj", "{5F0CF5E2-6112-442E-A3BD-2CDB728F6A7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Community.EntraUserPicker.Assets", "Our.Umbraco.Community.EntraUserPicker.Assets\Our.Umbraco.Community.EntraUserPicker.Assets.csproj", "{CA529C85-A34B-4DFD-BB29-3B017A849A67}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Our.Umbraco.Community.EntraUserPicker.Client", "Our.Umbraco.Community.EntraUserPicker.Client\", "{19079271-1F4A-48A8-8B16-75FF401945A4}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51694"
+		Debug.AspNetCompiler.PhysicalPath = "Our.Umbraco.Community.EntraUserPicker.Client\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51694\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51694"
+		Release.AspNetCompiler.PhysicalPath = "Our.Umbraco.Community.EntraUserPicker.Client\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51694\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51694"
+		SlnRelativePath = "Our.Umbraco.Community.EntraUserPicker.Client\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EA0FFA5-ABAF-460C-9C80-D2F5D9A3E7C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA0FFA5-ABAF-460C-9C80-D2F5D9A3E7C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA0FFA5-ABAF-460C-9C80-D2F5D9A3E7C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA0FFA5-ABAF-460C-9C80-D2F5D9A3E7C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F0CF5E2-6112-442E-A3BD-2CDB728F6A7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F0CF5E2-6112-442E-A3BD-2CDB728F6A7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F0CF5E2-6112-442E-A3BD-2CDB728F6A7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F0CF5E2-6112-442E-A3BD-2CDB728F6A7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA529C85-A34B-4DFD-BB29-3B017A849A67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA529C85-A34B-4DFD-BB29-3B017A849A67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA529C85-A34B-4DFD-BB29-3B017A849A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA529C85-A34B-4DFD-BB29-3B017A849A67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19079271-1F4A-48A8-8B16-75FF401945A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19079271-1F4A-48A8-8B16-75FF401945A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19079271-1F4A-48A8-8B16-75FF401945A4}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{19079271-1F4A-48A8-8B16-75FF401945A4}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE9030A4-4982-47A4-8AC2-81AD0FD4C85C}
+	EndGlobalSection
+EndGlobal
