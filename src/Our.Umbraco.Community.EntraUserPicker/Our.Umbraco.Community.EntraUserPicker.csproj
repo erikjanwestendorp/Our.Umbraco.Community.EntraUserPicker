@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Our.Umbraco.Community.EntraUserPicker.Assets\Our.Umbraco.Community.EntraUserPicker.Assets.csproj" />
+    <ProjectReference Include="..\Our.Umbraco.Community.EntraUserPicker.Core\Our.Umbraco.Community.EntraUserPicker.Core.csproj" />
+  </ItemGroup>
+
 </Project>
