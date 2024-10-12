@@ -22,7 +22,7 @@ internal class EntraUserService(GraphServiceClient graphClient, ILogger<EntraUse
         }
     }
 
-    public async Task<IEnumerable<User>> Filter(string query)
+    public async Task<IEnumerable<User>> FilterAsync(string query)
     {
         try
         {
@@ -44,7 +44,7 @@ internal class EntraUserService(GraphServiceClient graphClient, ILogger<EntraUse
         return Enumerable.Empty<User>();
     }
 
-    public async Task<IEnumerable<User>> GetAll(int skip, int take)
+    public async Task<IEnumerable<User>> GetAllAsync(int skip, int take)
     {
         try
         {

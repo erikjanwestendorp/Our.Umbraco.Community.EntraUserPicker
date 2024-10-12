@@ -14,7 +14,7 @@ public class FilterUserController(
     [HttpGet("filter")]
     public async Task<IActionResult> Filter(CancellationToken cancellationToken, string filter)
     {
-        var users = await entraUserService.Filter(filter);
+        var users = await entraUserService.FilterAsync(filter);
 
         if (users.Any())
         {
