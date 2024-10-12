@@ -9,7 +9,6 @@ internal class UserPresentationFactory : IUserPresentationFactory
     {
         ArgumentNullException.ThrowIfNull(user.Id);
         ArgumentNullException.ThrowIfNull(user.DisplayName);
-        ArgumentNullException.ThrowIfNull(user.Mail);
 
         var response = new UserResponseModel
         {
