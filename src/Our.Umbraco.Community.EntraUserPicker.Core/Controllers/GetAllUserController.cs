@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Our.Umbraco.Community.EntraUserPicker.Core.Factories;
 using Our.Umbraco.Community.EntraUserPicker.Core.Services;
 using Our.Umbraco.Community.EntraUserPicker.Core.ViewModels;
+using Umbraco.Cms.Api.Common.ViewModels.Pagination;
 
 namespace Our.Umbraco.Community.EntraUserPicker.Core.Controllers;
 
@@ -11,19 +13,21 @@ public class GetAllUserController(
     IUserPresentationFactory userPresentationFactory) : Controller
 {
     [HttpGet("all")]
+    [ProducesResponseType(typeof(PagedViewModel<UserResponseModel>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetAll(CancellationToken cancellationToken, int skip = 0, int take = 100)
     {
         var users = await entraUserService.GetAllAsync(skip, take);
 
         if (users.Any())
         {
-            var result = new List<UserResponseModel>();
-            foreach (var user in users)
+            var pagedViewModel = new PagedViewModel<UserResponseModel>()
             {
-                result.Add(userPresentationFactory.CreateResponseModel(user));
-            }
+                Total = 10000,
+                Items = users.Select(userPresentationFactory.CreateResponseModel)
+            };
 
-            return Ok(result);
+            return Ok(pagedViewModel);
         }
 
         return NotFound();
