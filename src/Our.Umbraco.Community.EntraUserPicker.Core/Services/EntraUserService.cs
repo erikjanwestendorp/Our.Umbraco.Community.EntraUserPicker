@@ -4,29 +4,43 @@ using Microsoft.Graph.Models;
 
 namespace Our.Umbraco.Community.EntraUserPicker.Core.Services;
 
-internal class EntraUserService : IEntraUserService
+internal class EntraUserService(GraphServiceClient graphClient, ILogger<EntraUserService> logger)
+    : IEntraUserService
 {
-    private readonly GraphServiceClient _graphClient;
-    private readonly ILogger<EntraUserService> _logger;
-
-    public EntraUserService(GraphServiceClient graphClient, ILogger<EntraUserService> logger)
-    {
-        _graphClient = graphClient;
-        _logger = logger;
-    }
-
     public async Task<User?> GetByIdAsync(string id)
     {
         try
         {
-            var user = await _graphClient.Users[id].GetAsync();
+            var user = await graphClient.Users[id].GetAsync();
 
             return user;
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex.Message,ex);
+            logger.LogError(ex.Message,ex);
             return null;
         }
+    }
+
+    public async Task<IEnumerable<User>> Filter(string query)
+    {
+        try
+        {
+            var users = await graphClient.Users.GetAsync((requestConfiguration) =>
+            {
+                requestConfiguration.QueryParameters.Filter = $"startswith(displayName, '{query}')";
+            });
+
+            if (users != null && users.Value != null)
+            {
+                return users.Value;
+            }
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex.Message, ex);
+        }
+
+        return Enumerable.Empty<User>();
     }
 }

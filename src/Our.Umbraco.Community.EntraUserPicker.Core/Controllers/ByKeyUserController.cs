@@ -8,8 +8,9 @@ namespace Our.Umbraco.Community.EntraUserPicker.Core.Controllers;
 
 [ApiController]
 [Route("/api/entra/user")]
-public class ByKeyUserController(IEntraUserService entraUserService, IUserPresentationFactory userPresentationFactory)
-    : Controller
+public class ByKeyUserController(
+    IEntraUserService entraUserService, 
+    IUserPresentationFactory userPresentationFactory) : Controller
 {
     [HttpGet("{id:guid}")]
     [ProducesResponseType(typeof(UserResponseModel), StatusCodes.Status200OK)]
