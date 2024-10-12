@@ -22,13 +22,35 @@ internal class EntraUserService(GraphServiceClient graphClient, ILogger<EntraUse
         }
     }
 
-    public async Task<IEnumerable<User>> Filter(string query)
+    public async Task<IEnumerable<User>> FilterAsync(string query)
     {
         try
         {
             var users = await graphClient.Users.GetAsync((requestConfiguration) =>
             {
                 requestConfiguration.QueryParameters.Filter = $"startswith(displayName, '{query}')";
+            });
+
+            if (users != null && users.Value != null)
+            {
+                return users.Value;
+            }
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex.Message, ex);
+        }
+
+        return Enumerable.Empty<User>();
+    }
+
+    public async Task<IEnumerable<User>> GetAllAsync(int skip, int take)
+    {
+        try
+        {
+            var users = await graphClient.Users.GetAsync((requestConfiguration) =>
+            {
+                requestConfiguration.QueryParameters.Top = take;
             });
 
             if (users != null && users.Value != null)
