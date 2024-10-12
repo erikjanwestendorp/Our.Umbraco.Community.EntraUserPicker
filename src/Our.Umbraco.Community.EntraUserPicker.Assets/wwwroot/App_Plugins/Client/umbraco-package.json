@@ -1,0 +1,20 @@
+{
+  "$schema": "../../umbraco-package-schema.json",
+  "name": "Entra User Picker",
+  "version": "0.1.0",
+  "extensions": [
+    {
+      "type": "propertyEditorUi",
+      "alias": "Entra.PropertyEditorUi.UserPicker",
+      "name": "Entra User Picker",
+      "element": "/App_Plugins/Client/client.js",
+      "elementName": "my-element",
+      "meta": {
+        "label": "Entra User Picker",
+        "propertyEditorSchemaAlias": "Umbraco.Plain.String",
+        "icon": "icon-user",
+        "group": "people"
+      }
+    }
+  ]
+}
