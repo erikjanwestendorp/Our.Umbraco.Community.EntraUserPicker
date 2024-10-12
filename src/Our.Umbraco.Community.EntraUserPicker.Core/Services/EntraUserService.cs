@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Graph;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions;
 
 namespace Our.Umbraco.Community.EntraUserPicker.Core.Services;
 
@@ -48,7 +49,10 @@ internal class EntraUserService(GraphServiceClient graphClient, ILogger<EntraUse
     {
         try
         {
-            var users = await graphClient.Users.GetAsync();
+            var users = await graphClient.Users.GetAsync((requestConfiguration) =>
+            {
+                requestConfiguration.QueryParameters.Top = take;
+            });
 
             if (users != null && users.Value != null)
             {
