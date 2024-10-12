@@ -15,14 +15,14 @@ public class ByKeyUserController(
     [HttpGet("{id:guid}")]
     [ProducesResponseType(typeof(UserResponseModel), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> Get(Guid id)
+    public async Task<IActionResult> Get(CancellationToken cancellationToken, Guid id)
     {
         //TODO Add Authorization
         var user = await entraUserService.GetByIdAsync(id.ToString());
 
         if (user == null)
         {
-            return NotFound("user not found");
+            return NotFound();
         }
 
         var responseModel = userPresentationFactory.CreateResponseModel(user);

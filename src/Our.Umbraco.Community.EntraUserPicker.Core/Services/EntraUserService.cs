@@ -43,4 +43,23 @@ internal class EntraUserService(GraphServiceClient graphClient, ILogger<EntraUse
 
         return Enumerable.Empty<User>();
     }
+
+    public async Task<IEnumerable<User>> GetAll(int skip, int take)
+    {
+        try
+        {
+            var users = await graphClient.Users.GetAsync();
+
+            if (users != null && users.Value != null)
+            {
+                return users.Value;
+            }
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex.Message, ex);
+        }
+
+        return Enumerable.Empty<User>();
+    }
 }

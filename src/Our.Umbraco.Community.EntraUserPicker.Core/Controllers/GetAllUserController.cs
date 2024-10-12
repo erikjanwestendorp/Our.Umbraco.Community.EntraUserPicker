@@ -5,20 +5,18 @@ using Our.Umbraco.Community.EntraUserPicker.Core.ViewModels;
 
 namespace Our.Umbraco.Community.EntraUserPicker.Core.Controllers;
 
-[ApiController]
 [Route("api/entra/user")]
-public class FilterUserController(
-    IEntraUserService entraUserService, 
+public class GetAllUserController(
+    IEntraUserService entraUserService,
     IUserPresentationFactory userPresentationFactory) : Controller
 {
-    [HttpGet("filter")]
-    public async Task<IActionResult> Filter(CancellationToken cancellationToken, string filter)
+    [HttpGet("all")]
+    public async Task<IActionResult> GetAll(CancellationToken cancellationToken, int skip = 0, int take = 100)
     {
-        var users = await entraUserService.Filter(filter);
+        var users = await entraUserService.GetAll(skip, take);
 
         if (users.Any())
         {
-            //TODO Update UserPresentationFactory
             var result = new List<UserResponseModel>();
             foreach (var user in users)
             {

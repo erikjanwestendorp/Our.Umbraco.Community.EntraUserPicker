@@ -6,4 +6,5 @@ public interface IEntraUserService
 {
     Task<User?> GetByIdAsync(string id);
     Task<IEnumerable<User>> Filter(string query);
+    Task<IEnumerable<User>> GetAll(int skip, int take);
 }
