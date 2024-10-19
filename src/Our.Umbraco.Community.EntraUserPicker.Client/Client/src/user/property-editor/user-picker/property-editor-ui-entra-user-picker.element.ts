@@ -18,7 +18,7 @@ export default class PropertyEditorUIEntraUserPickerElement extends LitElement i
 
     override render() {
 		return html`
-			<umb-user-input min="0" max="1" .value=${this.value ?? ''} @change=${this.#onChange}></umb-user-input>
+			<entra-user-input min="0" max="1" .value=${this.value ?? ''} @change=${this.#onChange}></entra-user-input>
 		`;
 	}
 }
