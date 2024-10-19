@@ -13,7 +13,43 @@
         "label": "Entra User Picker",
         "propertyEditorSchemaAlias": "Umbraco.Plain.String",
         "icon": "icon-user",
-        "group": "people"
+        "group": "people",
+        "settings": {
+            "properties": [
+                {
+                    "alias": "minNumber",
+                    "label": "Minimum number of items",
+                    "propertyEditorUiAlias": "Umb.PropertyEditorUi.Integer",
+                    "config" : [
+                      {
+                        "alias" : "min",
+                        "value" : 0
+                      }
+                    ]
+                },
+                {
+                    "alias": "maxNumber",
+                    "label": "Maximum number of items",
+                    "propertyEditorUiAlias": "Umb.PropertyEditorUi.Integer",
+                    "config" : [
+                      {
+                        "alias" : "min",
+                        "value" : 0
+                      }
+                    ]
+                }
+            ],
+            "defaultData": [
+              {
+                "alias" : "minNumber",
+                "value" : 0
+              },
+              {
+                "alias" : "maxNumber",
+                "value" : 1
+              }
+            ]
+        }
       }
     }
   ]

@@ -1,60 +1,69 @@
-import { property as u, customElement as U, LitElement as O, html as v, css as k, state as q, nothing as y, repeat as W } from "@umbraco-cms/backoffice/external/lit";
-import { UmbPropertyValueChangeEvent as A } from "@umbraco-cms/backoffice/property-editor";
+import { property as u, state as y, customElement as U, LitElement as A, html as d, ifDefined as b, css as q, nothing as x, repeat as W } from "@umbraco-cms/backoffice/external/lit";
+import { UmbPropertyValueChangeEvent as D } from "@umbraco-cms/backoffice/property-editor";
 import { UmbUserPickerInputContext as T } from "@umbraco-cms/backoffice/user";
-import { splitStringToArray as z } from "@umbraco-cms/backoffice/utils";
-import { UmbChangeEvent as D } from "@umbraco-cms/backoffice/event";
-import { UmbLitElement as V } from "@umbraco-cms/backoffice/lit-element";
-import { UmbSorterController as F } from "@umbraco-cms/backoffice/sorter";
-import { UUIFormControlMixin as L } from "@umbraco-cms/backoffice/external/uui";
-var N = Object.defineProperty, B = Object.getOwnPropertyDescriptor, b = (e) => {
+import { splitStringToArray as V } from "@umbraco-cms/backoffice/utils";
+import { UmbChangeEvent as z } from "@umbraco-cms/backoffice/event";
+import { UmbLitElement as N } from "@umbraco-cms/backoffice/lit-element";
+import { UmbSorterController as B } from "@umbraco-cms/backoffice/sorter";
+import { UUIFormControlMixin as F } from "@umbraco-cms/backoffice/external/uui";
+var L = Object.defineProperty, G = Object.getOwnPropertyDescriptor, $ = (e) => {
   throw TypeError(e);
-}, E = (e, t, r, o) => {
-  for (var i = o > 1 ? void 0 : o ? B(t, r) : t, h = e.length - 1, m; h >= 0; h--)
+}, f = (e, t, r, o) => {
+  for (var i = o > 1 ? void 0 : o ? G(t, r) : t, h = e.length - 1, m; h >= 0; h--)
     (m = e[h]) && (i = (o ? m(t, r, i) : m(i)) || i);
-  return o && i && N(t, r, i), i;
-}, G = (e, t, r) => t.has(e) || b("Cannot " + r), R = (e, t, r) => t.has(e) ? b("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, r), j = (e, t, r) => (G(e, t, "access private method"), r), _, $;
-let d = class extends O {
+  return o && i && L(t, r, i), i;
+}, R = (e, t, r) => t.has(e) || $("Cannot " + r), j = (e, t, r) => t.has(e) ? $("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, r), H = (e, t, r) => (R(e, t, "access private method"), r), g, w;
+let c = class extends A {
   constructor() {
-    super(...arguments), R(this, _), this.value = "";
+    super(...arguments), j(this, g), this.value = "";
+  }
+  set config(e) {
+    this._minEntries = e.getValueByAlias("minNumber"), this._maxEntries = e.getValueByAlias("maxNumber");
   }
   render() {
-    return v`
-			<entra-user-input min="0" max="1" .value=${this.value ?? ""} @change=${j(this, _, $)}></entra-user-input>
+    return d`
+			<entra-user-input min=${b(this._minEntries)} max=${b(this._maxEntries)} .value=${this.value ?? ""} @change=${H(this, g, w)}></entra-user-input>
 		`;
   }
 };
-_ = /* @__PURE__ */ new WeakSet();
-$ = function(e) {
-  this.value = e.target.value, this.dispatchEvent(new A());
+g = /* @__PURE__ */ new WeakSet();
+w = function(e) {
+  this.value = e.target.value, this.dispatchEvent(new D());
 };
-E([
+f([
   u({ type: String })
-], d.prototype, "value", 2);
-E([
+], c.prototype, "value", 2);
+f([
   u({ attribute: !1 })
-], d.prototype, "config", 2);
-d = E([
+], c.prototype, "config", 1);
+f([
+  y()
+], c.prototype, "_minEntries", 2);
+f([
+  y()
+], c.prototype, "_maxEntries", 2);
+c = f([
   U("property-editor-ui-entra-user-picker")
-], d);
-var H = Object.defineProperty, J = Object.getOwnPropertyDescriptor, x = (e) => {
+], c);
+var J = Object.defineProperty, K = Object.getOwnPropertyDescriptor, S = (e) => {
   throw TypeError(e);
 }, l = (e, t, r, o) => {
-  for (var i = o > 1 ? void 0 : o ? J(t, r) : t, h = e.length - 1, m; h >= 0; h--)
+  for (var i = o > 1 ? void 0 : o ? K(t, r) : t, h = e.length - 1, m; h >= 0; h--)
     (m = e[h]) && (i = (o ? m(t, r, i) : m(i)) || i);
-  return o && i && H(t, r, i), i;
-}, w = (e, t, r) => t.has(e) || x("Cannot " + r), s = (e, t, r) => (w(e, t, "read from private field"), r ? r.call(e) : t.get(e)), f = (e, t, r) => t.has(e) ? x("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, r), c = (e, t, r) => (w(e, t, "access private method"), r), g, n, p, S, C, I, P, M;
-let a = class extends L(V, "") {
+  return o && i && J(t, r, i), i;
+}, C = (e, t, r) => t.has(e) || S("Cannot " + r), s = (e, t, r) => (C(e, t, "read from private field"), r ? r.call(e) : t.get(e)), _ = (e, t, r) => t.has(e) ? S("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, r), v = (e, t, r) => (C(e, t, "access private method"), r), E, n, p, I, P, M, O, k;
+let a = class extends F(N, "") {
   constructor() {
-    super(), f(this, p), f(this, g, new F(this, {
+    super(), _(this, p), _(this, E, new B(this, {
       getUniqueOfElement: (e) => e.id,
       getUniqueOfModel: (e) => e,
       identifier: "Umb.SorterIdentifier.InputUser",
       itemSelector: "uui-ref-node-user",
       containerSelector: "uui-ref-list",
       onChange: ({ model: e }) => {
-        this.selection = e, this.dispatchEvent(new D());
+        this.selection = e, this.dispatchEvent(new z());
       }
-    })), this.minMessage = "This field need more items", this.maxMessage = "This field exceeds the allowed amount of items", f(this, n, new T(this)), this.addValidator(
+    })), this.minMessage = "This field need more items", this.maxMessage = "This field exceeds the allowed amount of items", _(this, n, new T(this)), this.addValidator(
       "rangeUnderflow",
       () => this.minMessage,
       () => !!this.min && s(this, n).getSelection().length < this.min
@@ -77,13 +86,13 @@ let a = class extends L(V, "") {
     s(this, n).max = e;
   }
   set selection(e) {
-    s(this, n).setSelection(e), s(this, g).setModel(e);
+    s(this, n).setSelection(e), s(this, E).setModel(e);
   }
   get selection() {
     return s(this, n).getSelection();
   }
   set value(e) {
-    this.selection = z(e);
+    this.selection = V(e);
   }
   get value() {
     return this.selection.join(",");
@@ -91,53 +100,53 @@ let a = class extends L(V, "") {
   getFormElement() {
   }
   render() {
-    return v`${c(this, p, P).call(this)} ${c(this, p, I).call(this)}`;
+    return d`${v(this, p, O).call(this)} ${v(this, p, M).call(this)}`;
   }
 };
-g = /* @__PURE__ */ new WeakMap();
+E = /* @__PURE__ */ new WeakMap();
 n = /* @__PURE__ */ new WeakMap();
 p = /* @__PURE__ */ new WeakSet();
-S = function() {
+I = function() {
   s(this, n).openPicker({});
 };
-C = function(e) {
+P = function(e) {
   s(this, n).requestRemoveItem(e.unique);
 };
-I = function() {
-  return this.max > 0 && this.selection.length >= this.max ? y : v`
+M = function() {
+  return this.max > 0 && this.selection.length >= this.max ? x : d`
 			<uui-button
 				id="btn-add"
 				look="placeholder"
 				label=${this.localize.term("general_choose")}
-				@click=${c(this, p, S)}></uui-button>
+				@click=${v(this, p, I)}></uui-button>
 		`;
 };
-P = function() {
-  return this._items ? v`
+O = function() {
+  return this._items ? d`
 			<uui-ref-list>
 				${W(
     this._items,
     (e) => e.unique,
-    (e) => c(this, p, M).call(this, e)
+    (e) => v(this, p, k).call(this, e)
   )}
 			</uui-ref-list>
-		` : y;
+		` : x;
 };
-M = function(e) {
-  return e.unique ? v`
+k = function(e) {
+  return e.unique ? d`
 			<uui-ref-node-user name=${e.name} id=${e.unique}>
 				<umb-user-avatar
 					slot="icon"
 					.name=${e.name}
 					.imgUrls=${e.avatarUrls}></umb-user-avatar>
 				<uui-action-bar slot="actions">
-					<uui-button label=${this.localize.term("general_remove")} @click=${() => c(this, p, C).call(this, e)}></uui-button>
+					<uui-button label=${this.localize.term("general_remove")} @click=${() => v(this, p, P).call(this, e)}></uui-button>
 				</uui-action-bar>
 			</uui-ref-node-user>
-		` : y;
+		` : x;
 };
 a.styles = [
-  k`
+  q`
 			#btn-add {
 				width: 100%;
 			}
@@ -166,14 +175,14 @@ l([
   u()
 ], a.prototype, "value", 1);
 l([
-  q()
+  y()
 ], a.prototype, "_items", 2);
 a = l([
   U("entra-user-input")
 ], a);
-const ie = a;
+const ne = a;
 export {
-  ie as EnttraUserInputElement,
-  d as PropertyEditorUIEntraUserPickerElement
+  ne as EnttraUserInputElement,
+  c as PropertyEditorUIEntraUserPickerElement
 };
 //# sourceMappingURL=client.js.map
