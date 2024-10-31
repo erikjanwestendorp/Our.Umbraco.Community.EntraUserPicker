@@ -1,5 +1,5 @@
 import type { UmbUserItemModel } from '@umbraco-cms/backoffice/user';
-import { UmbUserPickerInputContext } from '@umbraco-cms/backoffice/user';
+import { EntraUserPickerInputContext } from './user-input.context.ts';
 import { css, customElement, html, nothing, property, repeat, state } from '@umbraco-cms/backoffice/external/lit';
 import { splitStringToArray } from '@umbraco-cms/backoffice/utils';
 import { UmbChangeEvent } from '@umbraco-cms/backoffice/event';
@@ -7,7 +7,6 @@ import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 import { UmbSorterController } from '@umbraco-cms/backoffice/sorter';
 import { UUIFormControlMixin } from '@umbraco-cms/backoffice/external/uui';
 
-// TODO: Shall we rename to 'umb-input-user'? [LK]
 @customElement('entra-user-input')
 export class EntraUserInputElement extends UUIFormControlMixin(UmbLitElement, '') {
 	#sorter = new UmbSorterController<string>(this, {
@@ -92,7 +91,7 @@ export class EntraUserInputElement extends UUIFormControlMixin(UmbLitElement, ''
 	@state()
 	private _items?: Array<UmbUserItemModel>;
 
-	#pickerContext = new UmbUserPickerInputContext(this);
+	#pickerContext = new EntraUserPickerInputContext(this);
 
 	constructor() {
 		super();
