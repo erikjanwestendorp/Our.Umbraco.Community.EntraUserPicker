@@ -12,4 +12,8 @@
 		<PackageReference Include="Umbraco.Cms.Api.Common" Version="15.1.1" />
 		<PackageReference Include="Azure.Identity" Version="1.12.1" />
 	</ItemGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="Our.Umbraco.Community.EntraUserPicker.UnitTests" />
+	</ItemGroup>
 </Project>
