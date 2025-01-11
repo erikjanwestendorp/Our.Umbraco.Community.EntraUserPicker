@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Community.EntraUserPicker.Site", "Our.Umbraco.Community.EntraUserPicker.Site\Our.Umbraco.Community.EntraUserPicker.Site.csproj", "{3EA0FFA5-ABAF-460C-9C80-D2F5D9A3E7C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Community.EntraUserPicker.Site", "examples\Our.Umbraco.Community.EntraUserPicker.Site\Our.Umbraco.Community.EntraUserPicker.Site.csproj", "{3EA0FFA5-ABAF-460C-9C80-D2F5D9A3E7C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Community.EntraUserPicker", "Our.Umbraco.Community.EntraUserPicker\Our.Umbraco.Community.EntraUserPicker.csproj", "{5F0CF5E2-6112-442E-A3BD-2CDB728F6A7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Community.EntraUserPicker", "src\Our.Umbraco.Community.EntraUserPicker\Our.Umbraco.Community.EntraUserPicker.csproj", "{5F0CF5E2-6112-442E-A3BD-2CDB728F6A7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Community.EntraUserPicker.Assets", "Our.Umbraco.Community.EntraUserPicker.Assets\Our.Umbraco.Community.EntraUserPicker.Assets.csproj", "{CA529C85-A34B-4DFD-BB29-3B017A849A67}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Community.EntraUserPicker.Assets", "src\Our.Umbraco.Community.EntraUserPicker.Assets\Our.Umbraco.Community.EntraUserPicker.Assets.csproj", "{CA529C85-A34B-4DFD-BB29-3B017A849A67}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Our.Umbraco.Community.EntraUserPicker.Client", "Our.Umbraco.Community.EntraUserPicker.Client\", "{19079271-1F4A-48A8-8B16-75FF401945A4}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Our.Umbraco.Community.EntraUserPicker.Client", "src\Our.Umbraco.Community.EntraUserPicker.Client\", "{19079271-1F4A-48A8-8B16-75FF401945A4}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_51694"
@@ -30,7 +30,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Our.Umbraco.Community.Entra
 		SlnRelativePath = "Our.Umbraco.Community.EntraUserPicker.Client\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Community.EntraUserPicker.Core", "Our.Umbraco.Community.EntraUserPicker.Core\Our.Umbraco.Community.EntraUserPicker.Core.csproj", "{0E180F0D-CE3A-43B9-9E7D-E524EAD52AAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Community.EntraUserPicker.Core", "src\Our.Umbraco.Community.EntraUserPicker.Core\Our.Umbraco.Community.EntraUserPicker.Core.csproj", "{0E180F0D-CE3A-43B9-9E7D-E524EAD52AAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3EA0FFA5-ABAF-460C-9C80-D2F5D9A3E7C8} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE9030A4-4982-47A4-8AC2-81AD0FD4C85C}
