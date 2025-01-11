@@ -1,12 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Our.Umbraco.Community.EntraUserPicker.Core.Configuration;
 using Our.Umbraco.Community.EntraUserPicker.Core.Factories;
 using Our.Umbraco.Community.EntraUserPicker.Core.Services;
 using Our.Umbraco.Community.EntraUserPicker.Core.ViewModels;
+using Umbraco.Cms.Api.Common.Attributes;
 
 namespace Our.Umbraco.Community.EntraUserPicker.Core.Controllers;
 
 [ApiController]
 [Route("api/entra/user")]
+[MapToApi(EntraPickerOptions.ApiName)]
 public class FilterUserController(
     IEntraUserService entraUserService, 
     IUserPresentationFactory userPresentationFactory) : Controller
