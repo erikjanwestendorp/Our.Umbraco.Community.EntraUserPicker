@@ -6,6 +6,7 @@ using Our.Umbraco.Community.EntraUserPicker.Core.Services;
 using Our.Umbraco.Community.EntraUserPicker.Core.ViewModels;
 using Umbraco.Cms.Api.Common.Attributes;
 using Umbraco.Cms.Api.Common.ViewModels.Pagination;
+using Umbraco.Cms.Api.Management.Controllers;
 
 namespace Our.Umbraco.Community.EntraUserPicker.Core.Controllers;
 
@@ -13,7 +14,7 @@ namespace Our.Umbraco.Community.EntraUserPicker.Core.Controllers;
 [MapToApi(EntraPickerOptions.ApiName)]
 public class GetAllUserController(
     IEntraUserService entraUserService,
-    IUserPresentationFactory userPresentationFactory) : Controller
+    IUserPresentationFactory userPresentationFactory) : ManagementApiControllerBase
 {
     [HttpGet("all")]
     [ProducesResponseType(typeof(PagedViewModel<UserResponseModel>), StatusCodes.Status200OK)]
