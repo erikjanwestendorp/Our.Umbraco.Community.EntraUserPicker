@@ -5,6 +5,7 @@ using Our.Umbraco.Community.EntraUserPicker.Core.Factories;
 using Our.Umbraco.Community.EntraUserPicker.Core.Services;
 using Our.Umbraco.Community.EntraUserPicker.Core.ViewModels;
 using Umbraco.Cms.Api.Common.Attributes;
+using Umbraco.Cms.Api.Management.Controllers;
 
 namespace Our.Umbraco.Community.EntraUserPicker.Core.Controllers;
 
@@ -13,7 +14,7 @@ namespace Our.Umbraco.Community.EntraUserPicker.Core.Controllers;
 [MapToApi(EntraPickerOptions.ApiName)]
 public class ByKeyUserController(
     IEntraUserService entraUserService, 
-    IUserPresentationFactory userPresentationFactory) : Controller
+    IUserPresentationFactory userPresentationFactory) : ManagementApiControllerBase
 {
     [HttpGet("{id:guid}")]
     [ProducesResponseType(typeof(UserResponseModel), StatusCodes.Status200OK)]
