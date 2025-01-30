@@ -12,7 +12,7 @@ namespace Our.Umbraco.Community.EntraUserPicker.Core.Controllers;
 [ApiController]
 [Route("/api/entra/user")]
 [MapToApi(EntraPickerOptions.ApiName)]
-public class ByKeyUserController(
+public class ByKeyEntraUserController(
     IEntraUserService entraUserService, 
     IUserPresentationFactory userPresentationFactory) : ManagementApiControllerBase
 {
