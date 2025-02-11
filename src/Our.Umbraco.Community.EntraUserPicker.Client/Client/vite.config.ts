@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
     build: {
         lib: {
-            entry: "src/user/index.ts", 
+            entry: "src/manifests.ts", 
             formats: ["es"],
         },
         outDir: "../../Our.Umbraco.Community.EntraUserPicker.Assets/wwwroot/App_Plugins/Client",
