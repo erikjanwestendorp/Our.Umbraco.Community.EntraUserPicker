@@ -1,5 +1,5 @@
 import { LitElement, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";
-import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
+import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/property-editor";
 import { UmbPropertyEditorConfigCollection, UmbPropertyValueChangeEvent } from "@umbraco-cms/backoffice/property-editor";
 
 @customElement('property-editor-ui-entra-user-picker')
