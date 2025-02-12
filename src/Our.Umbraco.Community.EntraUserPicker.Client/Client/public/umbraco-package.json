@@ -7,9 +7,7 @@
       "type": "bundle",
       "alias": "Entra.PropertyEditorUi.UserPicker.Bundle",
       "name": "Entra User Picker",
-      "js": [
-        "App_Plugins/Entra.UserPicker/client.js"
-      ]
+      "js": "/App_Plugins/Client/client.js"
     }
   ]
 }
