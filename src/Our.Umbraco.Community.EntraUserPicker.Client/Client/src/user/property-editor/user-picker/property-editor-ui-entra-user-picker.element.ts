@@ -4,6 +4,7 @@ import { UmbPropertyEditorConfigCollection, UmbPropertyValueChangeEvent } from "
 
 @customElement('property-editor-ui-entra-user-picker')
 export default class PropertyEditorUIEntraUserPickerElement extends LitElement implements UmbPropertyEditorUiElement {
+
     @property({ type: String })
     public value = '';
 
