@@ -6,7 +6,7 @@ export default defineConfig({
             entry: "src/manifests.ts", 
             formats: ["es"],
         },
-        outDir: "../../Our.Umbraco.Community.EntraUserPicker.Assets/wwwroot/App_Plugins/Client",
+        outDir: "../../Our.Umbraco.Community.EntraUserPicker.Assets/wwwroot",
         emptyOutDir: true,
         sourcemap: true,
         rollupOptions: {
