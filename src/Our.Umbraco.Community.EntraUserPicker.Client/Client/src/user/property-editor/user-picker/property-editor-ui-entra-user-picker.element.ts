@@ -1,6 +1,7 @@
-import { LitElement, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";
+import { LitElement, html, customElement, property } from "@umbraco-cms/backoffice/external/lit";
 import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/property-editor";
 import { UmbPropertyEditorConfigCollection, UmbPropertyValueChangeEvent } from "@umbraco-cms/backoffice/property-editor";
+import '../../components/user-input/user-input.element.ts';
 
 @customElement('property-editor-ui-entra-user-picker')
 export default class PropertyEditorUIEntraUserPickerElement extends LitElement implements UmbPropertyEditorUiElement {
@@ -9,25 +10,16 @@ export default class PropertyEditorUIEntraUserPickerElement extends LitElement i
     public value = '';
 
 	@property({ attribute: false })
-	public set config(config: UmbPropertyEditorConfigCollection) {
-	  this._minEntries = config.getValueByAlias("minNumber");
-	  this._maxEntries = config.getValueByAlias("maxNumber");
-	}
+	public config?: UmbPropertyEditorConfigCollection;
 
 	#onChange(event: CustomEvent & { target: HTMLInputElement  }) {
 		this.value = event.target.value;
 		this.dispatchEvent(new UmbPropertyValueChangeEvent());
 	}
 
-	@state()
-	private _minEntries?: number;
-  
-	@state()
-	private _maxEntries?: number;
-
     override render() {
 		return html`
-			<entra-user-input min=${ifDefined(this._minEntries)} max=${ifDefined(this._maxEntries)} .value=${this.value ?? ''} @change=${this.#onChange}></entra-user-input>
+			<entra-user-input min="0" max="1" .value=${this.value ?? ''} @change=${this.#onChange}></entra-user-input>
 		`;
 	}
 }

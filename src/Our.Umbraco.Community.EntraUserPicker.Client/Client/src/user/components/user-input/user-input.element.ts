@@ -95,7 +95,6 @@ export class EntraUserInputElement extends UUIFormControlMixin(UmbLitElement, ''
 
 	constructor() {
 		super();
-
 		this.addValidator(
 			'rangeUnderflow',
 			() => this.minMessage,
