@@ -15,13 +15,13 @@ class N extends D {
 var G = Object.defineProperty, K = Object.getOwnPropertyDescriptor, x = (e) => {
   throw TypeError(e);
 }, l = (e, t, r, o) => {
-  for (var i = o > 1 ? void 0 : o ? K(t, r) : t, h = e.length - 1, m; h >= 0; h--)
-    (m = e[h]) && (i = (o ? m(t, r, i) : m(i)) || i);
+  for (var i = o > 1 ? void 0 : o ? K(t, r) : t, h = e.length - 1, p; h >= 0; h--)
+    (p = e[h]) && (i = (o ? p(t, r, i) : p(i)) || i);
   return o && i && G(t, r, i), i;
-}, b = (e, t, r) => t.has(e) || x("Cannot " + r), s = (e, t, r) => (b(e, t, "read from private field"), r ? r.call(e) : t.get(e)), f = (e, t, r) => t.has(e) ? x("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, r), c = (e, t, r) => (b(e, t, "access private method"), r), _, n, p, S, I, $, P, w;
+}, b = (e, t, r) => t.has(e) || x("Cannot " + r), s = (e, t, r) => (b(e, t, "read from private field"), r ? r.call(e) : t.get(e)), f = (e, t, r) => t.has(e) ? x("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, r), c = (e, t, r) => (b(e, t, "access private method"), r), _, n, m, S, $, I, P, w;
 let a = class extends F(B, "") {
   constructor() {
-    super(), f(this, p), f(this, _, new V(this, {
+    super(), f(this, m), f(this, _, new V(this, {
       getUniqueOfElement: (e) => e.id,
       getUniqueOfModel: (e) => e,
       identifier: "Umb.SorterIdentifier.InputUser",
@@ -30,7 +30,7 @@ let a = class extends F(B, "") {
       onChange: ({ model: e }) => {
         this.selection = e, this.dispatchEvent(new L());
       }
-    })), this.minMessage = "This field need more items", this.maxMessage = "This field exceeds the allowed amount of items", f(this, n, new N(this)), console.log("EntraUserInputElement.constructor()"), this.addValidator(
+    })), this.minMessage = "This field need more items", this.maxMessage = "This field exceeds the allowed amount of items", f(this, n, new N(this)), this.addValidator(
       "rangeUnderflow",
       () => this.minMessage,
       () => !!this.min && s(this, n).getSelection().length < this.min
@@ -67,25 +67,25 @@ let a = class extends F(B, "") {
   getFormElement() {
   }
   render() {
-    return v`${c(this, p, P).call(this)} ${c(this, p, $).call(this)}`;
+    return v`${c(this, m, P).call(this)} ${c(this, m, I).call(this)}`;
   }
 };
 _ = /* @__PURE__ */ new WeakMap();
 n = /* @__PURE__ */ new WeakMap();
-p = /* @__PURE__ */ new WeakSet();
+m = /* @__PURE__ */ new WeakSet();
 S = function() {
-  s(this, n).openPicker({});
+  console.log("open picker"), s(this, n).openPicker({});
 };
-I = function(e) {
+$ = function(e) {
   s(this, n).requestRemoveItem(e.unique);
 };
-$ = function() {
+I = function() {
   return this.max > 0 && this.selection.length >= this.max ? E : v`
 			<uui-button
 				id="btn-add"
 				look="placeholder"
 				label=${this.localize.term("general_choose")}
-				@click=${c(this, p, S)}></uui-button>
+				@click=${c(this, m, S)}></uui-button>
 		`;
 };
 P = function() {
@@ -94,7 +94,7 @@ P = function() {
 				${A(
     this._items,
     (e) => e.unique,
-    (e) => c(this, p, w).call(this, e)
+    (e) => c(this, m, w).call(this, e)
   )}
 			</uui-ref-list>
 		` : E;
@@ -107,7 +107,7 @@ w = function(e) {
 					.name=${e.name}
 					.imgUrls=${e.avatarUrls}></umb-user-avatar>
 				<uui-action-bar slot="actions">
-					<uui-button label=${this.localize.term("general_remove")} @click=${() => c(this, p, I).call(this, e)}></uui-button>
+					<uui-button label=${this.localize.term("general_remove")} @click=${() => c(this, m, $).call(this, e)}></uui-button>
 				</uui-action-bar>
 			</uui-ref-node-user>
 		` : E;
@@ -150,8 +150,8 @@ a = l([
 var Y = Object.defineProperty, j = Object.getOwnPropertyDescriptor, C = (e) => {
   throw TypeError(e);
 }, y = (e, t, r, o) => {
-  for (var i = o > 1 ? void 0 : o ? j(t, r) : t, h = e.length - 1, m; h >= 0; h--)
-    (m = e[h]) && (i = (o ? m(t, r, i) : m(i)) || i);
+  for (var i = o > 1 ? void 0 : o ? j(t, r) : t, h = e.length - 1, p; h >= 0; h--)
+    (p = e[h]) && (i = (o ? p(t, r, i) : p(i)) || i);
   return o && i && Y(t, r, i), i;
 }, H = (e, t, r) => t.has(e) || C("Cannot " + r), J = (e, t, r) => t.has(e) ? C("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, r), Q = (e, t, r) => (H(e, t, "access private method"), r), g, M;
 let d = class extends T {
@@ -180,4 +180,4 @@ d = y([
 export {
   d as default
 };
-//# sourceMappingURL=property-editor-ui-entra-user-picker.element-iOhjdftm.js.map
+//# sourceMappingURL=property-editor-ui-entra-user-picker.element-cJ4LLi3Y.js.map

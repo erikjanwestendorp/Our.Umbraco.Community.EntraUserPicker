@@ -116,6 +116,7 @@ export class EntraUserInputElement extends UUIFormControlMixin(UmbLitElement, ''
 	}
 
 	#openPicker() {
+		console.log('open picker');
 		this.#pickerContext.openPicker({});
 	}
 
