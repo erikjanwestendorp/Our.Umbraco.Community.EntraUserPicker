@@ -6,6 +6,4 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<StaticWebAssetBasePath>App_Plugins/Client</StaticWebAssetBasePath>
 	</PropertyGroup>
-
-
 </Project>
