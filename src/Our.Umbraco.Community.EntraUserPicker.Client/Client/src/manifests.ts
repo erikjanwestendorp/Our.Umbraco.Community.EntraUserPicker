@@ -47,5 +47,11 @@ export const manifests: Array<UmbExtensionManifest> = [
             //     ]
             // }
 		}
-	}
+	},
+    {
+        type: 'modal',
+        name: 'Entra User Picker Modal',
+        alias: 'Entra.Modal.User.Picker',
+        element: () => import('./user/modals/user-picker-modal.element.js'),
+    }
 ]
