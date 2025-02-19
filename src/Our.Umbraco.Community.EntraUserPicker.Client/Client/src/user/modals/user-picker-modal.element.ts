@@ -1,16 +1,20 @@
 // import { UmbUserCollectionRepository } from '../../collection/repository/user-collection.repository.js';
-import type { UserResponseModel } from '../../api/types.gen.js';
-// import type { UmbUserPickerModalData, UmbUserPickerModalValue } from './user-picker-modal.token.js';
+// import { UmbUserCollectionRepository } from '@umbraco-cms/backoffice/user';
+// import type { UmbUserItemModel } from '../../repository/item/index.js';
+// import type { UmbUserItemModel } from '@umbraco-cms/backoffice/user';
+
+import type { UmbUserPickerModalData, UmbUserPickerModalValue } from './user-picker-modal.token.js';
 import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
 import type { PropertyValueMap } from '@umbraco-cms/backoffice/external/lit';
-import { css, html, customElement, state, ifDefined } from '@umbraco-cms/backoffice/external/lit';
+// import { css, html, customElement, state, ifDefined } from '@umbraco-cms/backoffice/external/lit';
+import { css, html, customElement } from '@umbraco-cms/backoffice/external/lit';
 import { UmbModalBaseElement } from '@umbraco-cms/backoffice/modal';
 import { UmbSelectionManager } from '@umbraco-cms/backoffice/utils';
 
-@customElement('entra-user-picker-modal')
-export class EntraUserPickerModalElement extends UmbModalBaseElement {
-	@state()
-	private _users: Array<UserResponseModel> = [];
+@customElement('umb-user-picker-modal')
+export class UmbUserPickerModalElement extends UmbModalBaseElement<UmbUserPickerModalData, UmbUserPickerModalValue> {
+	// @state()
+	// private _users: Array<UmbUserItemModel> = [];
 
 	#selectionManager = new UmbSelectionManager(this);
 	// #userCollectionRepository = new UmbUserCollectionRepository(this);
@@ -19,23 +23,24 @@ export class EntraUserPickerModalElement extends UmbModalBaseElement {
 		super.connectedCallback();
 
 		// TODO: in theory this config could change during the lifetime of the modal, so we could observe it
-		// this.#selectionManager.setMultiple(this.data?.multiple ?? false);
-		// this.#selectionManager.setSelection(this.value?.selection ?? []);
+		this.#selectionManager.setMultiple(this.data?.multiple ?? false);
+		this.#selectionManager.setSelection(this.value?.selection ?? []);
 	}
 
 	protected override firstUpdated(_changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>): void {
 		super.firstUpdated(_changedProperties);
-		// this.#requestUsers();
+		this.#requestUsers();
 	}
 
-	// async #requestUsers() {
-	// 	if (!this.#userCollectionRepository) return;
-	// 	const { data } = await this.#userCollectionRepository.requestCollection();
+	async #requestUsers() {
+		console.log('requesting users');
+		// if (!this.#userCollectionRepository) return;
+		// const { data } = await this.#userCollectionRepository.requestCollection();
 
-	// 	if (data) {
-	// 		this._users = data.items;
-	// 	}
-	// }
+		// if (data) {
+		// 	this._users = data.items;
+		// }
+	}
 
 	#submit() {
 		this.value = { selection: this.#selectionManager.getSelection() };
@@ -49,22 +54,7 @@ export class EntraUserPickerModalElement extends UmbModalBaseElement {
 	override render() {
 		return html`
 			<umb-body-layout headline=${this.localize.term('defaultdialogs_selectUsers')}>
-				<!-- <uui-box>
-					${this._users.map(
-						(user) => html`
-							<uui-menu-item
-								label=${ifDefined(user.displayName)}
-								selectable
-								@selected=${() => this.#selectionManager.select(user.key)}
-								@deselected=${() => this.#selectionManager.deselect(user.key)}
-								?selected=${this.#selectionManager.isSelected(user.key)}>
-								<umb-user-avatar
-									slot="icon"
-									.name=${user.displayName}></umb-user-avatar>
-							</uui-menu-item>
-						`,
-					)}
-				</uui-box> -->
+				
 				<div slot="actions">
 					<uui-button label="Close" @click=${this.#close}></uui-button>
 					<uui-button label="Submit" look="primary" color="positive" @click=${this.#submit}></uui-button>
@@ -83,10 +73,10 @@ export class EntraUserPickerModalElement extends UmbModalBaseElement {
 	];
 }
 
-export default EntraUserPickerModalElement;
+export default UmbUserPickerModalElement;
 
 declare global {
 	interface HTMLElementTagNameMap {
-		'entra-user-picker-modal': EntraUserPickerModalElement;
+		'umb-user-picker-modal': UmbUserPickerModalElement;
 	}
 }

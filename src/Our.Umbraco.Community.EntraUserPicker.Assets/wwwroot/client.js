@@ -3,7 +3,7 @@ const e = [
     type: "propertyEditorUi",
     name: "Entra User Picker",
     alias: "Entra.PropertyEditorUi.UserPicker",
-    element: () => import("./property-editor-ui-entra-user-picker.element-cJ4LLi3Y.js"),
+    element: () => import("./property-editor-ui-entra-user-picker.element-CFyfrGmm.js"),
     elementName: "property-editor-ui-entra-user-picker",
     meta: {
       label: "Entra User Picker",
@@ -47,6 +47,12 @@ const e = [
       //     ]
       // }
     }
+  },
+  {
+    type: "modal",
+    name: "Entra User Picker Modal",
+    alias: "Entra.Modal.User.Picker",
+    element: () => import("./user-picker-modal.element-BRmHN062.js")
   }
 ];
 export {
